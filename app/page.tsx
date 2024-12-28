@@ -1,101 +1,109 @@
-import Image from "next/image";
+import Link from 'next/link'
+import EventCard from './components/EventCard'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const events = [
+    {
+      title: "Galactic Tech Quiz ???",
+      date: "10th January 2025",
+      time: "8:00 am",
+      location: "Nebula Lab, 2nd Floor",
+      description: "Test your knowledge across the tech universe.",
+      rules: [
+        "Teams of 2 members each.",
+        "Multiple choice and rapid-fire rounds.",
+        "Use of electronic devices is strictly prohibited."
+      ]
+    },
+    {
+      title: "Cosmic Code Debugging",
+      date: "10th January 2025",
+      time: "8:45 am",
+      location: "Quantum Computing Lab, 2nd Floor",
+      description: "Unravel the mysteries in buggy alien codes.",
+      rules: [
+        "Individual participation.",
+        "Time limit: 60 minutes.",
+        "Languages allowed: C, C++, Java, Python."
+      ]
+    },
+    {
+      title: "Reverse Engineering: Decoding Alien Signals",
+      date: "10th January 2025",
+      time: "9:30 am",
+      location: "Signal Processing Lab, 2nd Floor",
+      description: "Decipher alien outputs and recreate their input signals.",
+      rules: [
+        "Teams of 2 members each.",
+        "Time limit: 90 minutes.",
+        "Use of any external resources is prohibited."
+      ]
+    },
+    {
+      title: "Intergalactic Sci-Fi Essay Writing",
+      date: "11th January 2025",
+      time: "8:00 am",
+      location: "Holographic Projection Room, 2nd Floor",
+      description: "Craft a cosmic tale of 1000-1500 words.",
+      rules: [
+        "Individual participation.",
+        "Time limit: 120 minutes.",
+        "Plagiarism will result in disqualification."
+      ]
+    },
+    {
+      title: "Warp Speed Typing Test",
+      date: "11th January 2025",
+      time: "8:45 am",
+      location: "Starship Bridge Simulator, 2nd Floor",
+      description: "Type at light speed to save the galaxy.",
+      rules: [
+        "Individual participation.",
+        "Time limit: 5 minutes.",
+        "Accuracy and speed will be evaluated."
+      ]
+    },
+    {
+      title: "Space Battle Royale: BGMI",
+      date: "11th January 2025",
+      time: "9:30 am",
+      location: "Virtual Reality Arena, 2nd Floor",
+      description: "Engage in interplanetary warfare in BGMI.",
+      rules: [
+        "Squad matches (4 players per team).",
+        "Participants must bring their own devices.",
+        "Use of emulators or hacks will result in disqualification."
+      ]
+    }
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="text-center relative z-10">
+      <h1 className="text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-800 minimal-glow">
+        <br></br><br></br>Technotia
+      </h1>
+      <p className="text-2xl mb-8 text-blue-300">Embark on a Cosmic Journey of Technology and Innovation</p>
+      <div className="mb-12">
+        <p className="text-xl text-green-300">10th & 11th January, 2025</p>
+        <p className="text-lg text-yellow-300">Kamaladevi College of Arts and Commerce, Kalyan, Vitthalwadi (E)</p>
+      </div>
+      <Link 
+        href="https://forms.google.com/technotia-registration" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="inline-block px-8 py-3 text-lg font-semibold text-white bg-purple-600 rounded-full hover:bg-purple-700 transition-colors duration-300 transform hover:scale-105"
+      >
+        Register Now
+      </Link>
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-purple-300 minimal-glow">Featured Cosmic Events</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {events.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
-  );
+  )
 }
+
