@@ -9,7 +9,7 @@ interface EventCardProps {
   time: string;
   location: string;
   description: string;
-  rules: string[];
+  rules?: string[];
 }
 
 export default function EventCard({ title, date, time, location, description, rules }: EventCardProps) {
@@ -35,7 +35,7 @@ export default function EventCard({ title, date, time, location, description, ru
           <Dialog.Panel className="w-full max-w-sm rounded bg-purple-900 p-6 text-white">
             <Dialog.Title className="text-2xl font-bold mb-4">{title} Rules</Dialog.Title>
             <ul className="list-disc pl-5 space-y-2">
-              {rules.map((rule, index) => (
+              {rules?.map((rule, index) => (
                 <li key={index}>{rule}</li>
               ))}
             </ul>
