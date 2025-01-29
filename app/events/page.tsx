@@ -3,46 +3,32 @@ import EventCard from '../components/EventCard'
 export default function Events() {
   const events = [
     {
-      title: "Galactic Tech Quiz ???",
-      date: "10th January 2025",
+      title: "Reverse Coding",
+      date: "21st February 2025",
       time: "8:00 am",
-      location: "Nebula Lab, 2nd Floor",
-      description: "Test your knowledge across the tech universe."
+      location: "IT Lab, 2nd Floor",
+      description: "Test your knowledge across the tech universe. An output will be given for which the participants have to write the source code"
     },
     {
-      title: "Cosmic Code Debugging",
-      date: "10th January 2025",
+      title: "Code Debug",
+      date: "21st February 2025",
       time: "8:45 am",
-      location: "Quantum Computing Lab, 2nd Floor",
-      description: "Unravel the mysteries in buggy alien codes."
+      location: "IT Lab, 2nd Floor",
+      description: "Unravel the mysteries in buggy codes."
     },
     {
-      title: "Reverse Engineering: Decoding Alien Signals",
-      date: "10th January 2025",
+      title: "Reverse Engineering: Decoding Jumbled Words",
+      date: "21st February 2025",
       time: "9:30 am",
       location: "Signal Processing Lab, 2nd Floor",
-      description: "Decipher alien outputs and recreate their input signals."
+      description: "Decipher jumbled outputs and recreate the source."
     },
     {
-      title: "Intergalactic Sci-Fi Essay Writing",
-      date: "11th January 2025",
-      time: "8:00 am",
-      location: "Holographic Projection Room, 2nd Floor",
-      description: "Craft a cosmic tale of 1000-1500 words."
-    },
-    {
-      title: "Warp Speed Typing Test",
-      date: "11th January 2025",
-      time: "8:45 am",
-      location: "Starship Bridge Simulator, 2nd Floor",
-      description: "Type at light speed to save the galaxy."
-    },
-    {
-      title: "Space Battle Royale: BGMI",
-      date: "11th January 2025",
-      time: "9:30 am",
-      location: "Virtual Reality Arena, 2nd Floor",
-      description: "Engage in interplanetary warfare in BGMI."
+      title: "Battle Royales!: BGMI, Free Fire, Valorant",
+      date: "21st February 2025",
+      time: "10:00 am",
+      location: "IT Lab, 2nd Floor",
+      description: "Engage in Battle Royales with your friends, competiting for the best team in this arena of players."
     }
   ]
 
