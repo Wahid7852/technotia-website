@@ -39,7 +39,7 @@ export default function Home() {
       ]
     },
     {
-      title: "Battle Royales!: BGMI, Free Fire, Valorant",
+      title: "Battle Royales!: BGMI, Free Fire",
       date: "21st February 2025",
       time: "10:00 am",
       location: "IT Lab, 2nd Floor",
