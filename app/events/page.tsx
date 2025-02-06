@@ -1,4 +1,5 @@
 import EventCard from '../components/EventCard'
+import ReverseCode from '../images/reverse-coding.jpg'
 
 export default function Events() {
   const events = [
@@ -7,7 +8,13 @@ export default function Events() {
       date: "21st February 2025",
       time: "8:00 am",
       location: "IT Lab, 2nd Floor",
-      description: "Test your knowledge across the tech universe. An output will be given for which the participants have to write the source code"
+      description: "Test your knowledge across the tech universe. An output will be given for which the participants have to write the source code",
+      rules: [
+        "Individual Participation",
+        "Time limit: 30 minutes.",
+        "Use of any external resources is prohibited."
+      ],
+      image: ReverseCode,
     },
     {
       title: "Code Debug",

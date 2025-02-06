@@ -1,26 +1,49 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
+import { JSX, useState } from "react"
+import { Dialog } from "@headlessui/react"
+import Image, { type StaticImageData } from "next/image"
 
 interface EventCardProps {
-  title: string;
-  date: string;
-  time: string;
-  location: string;
-  description: string;
-  rules?: string[];
+  title: string
+  date: string
+  time: string
+  location: string
+  description: string
+  rules?: string[]
+  image?: string | StaticImageData | (() => JSX.Element)
 }
 
-export default function EventCard({ title, date, time, location, description, rules }: EventCardProps) {
+export default function EventCard({ title, date, time, location, description, rules, image }: EventCardProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="bg-purple-900 bg-opacity-30 p-6 rounded-lg shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300 transform hover:scale-105">
+      {image && (
+        <div className="mb-4">
+          {typeof image === "string" || "src" in image ? (
+            <Image
+              src={typeof image === "string" ? image : image.src}
+              alt={title}
+              width={500}
+              height={400}
+              className="rounded-lg object-cover w-full h-48"
+            />
+          ) : typeof image === "function" ? (
+            <div className="w-full h-48 overflow-hidden rounded-lg">{image()}</div>
+          ) : null}
+        </div>
+      )}
       <h3 className="text-2xl font-bold mb-2 text-cyan-300 minimal-glow">{title}</h3>
-      <p className="mb-1 text-yellow-200"><strong>Date:</strong> {date}</p>
-      <p className="mb-1 text-yellow-200"><strong>Time:</strong> {time}</p>
-      <p className="mb-2 text-yellow-200"><strong>Location:</strong> {location}</p>
+      <p className="mb-1 text-yellow-200">
+        <strong>Date:</strong> {date}
+      </p>
+      <p className="mb-1 text-yellow-200">
+        <strong>Time:</strong> {time}
+      </p>
+      <p className="mb-2 text-yellow-200">
+        <strong>Location:</strong> {location}
+      </p>
       <p className="text-green-300 mb-4">{description}</p>
       <button
         onClick={() => setIsOpen(true)}
@@ -51,4 +74,3 @@ export default function EventCard({ title, date, time, location, description, ru
     </div>
   )
 }
-

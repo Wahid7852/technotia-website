@@ -1,5 +1,9 @@
 import Link from 'next/link'
 import EventCard from './components/EventCard'
+import ReverseCode from './images/reverse-coding.jpg'
+import Debugging from './images/debugging.jpg'
+import Jumble from './images/jumbled-words.jpg'
+import bgmi from './images/bgmi.jpg'
 
 export default function Home() {
   const events = [
@@ -13,7 +17,8 @@ export default function Home() {
         "Individual Participation",
         "Time limit: 30 minutes.",
         "Use of any external resources is prohibited."
-      ]
+      ],
+      image: ReverseCode,
     },
     {
       title: "Code Debugging",
@@ -25,7 +30,8 @@ export default function Home() {
         "Individual participation.",
         "Time limit: 30 minutes.",
         "Languages allowed: C, Python, Java."
-      ]
+      ],
+      image: Debugging
     },
     {
       title: "Crazy Words",
@@ -36,7 +42,8 @@ export default function Home() {
       rules: [
         "Individual participation.",
         "Time limit: 15 minutes.",
-      ]
+      ],
+      image: Jumble
     },
     {
       title: "Battle Royales!: BGMI, Free Fire",
@@ -49,7 +56,8 @@ export default function Home() {
         "Participants must bring their own devices.",
         "No internet will be provided.",
         "Use of any type of hacks and modification tools will result in disqualification."
-      ]
+      ],
+      image: bgmi
     }
   ]
 
