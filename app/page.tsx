@@ -46,7 +46,7 @@ export default function Home() {
       image: Jumble
     },
     {
-      title: "Battle Royales!: BGMI, Free Fire",
+      title: "Battle Royales!: BGMI, Free Fire (200Rs Per Squad)",
       date: "21st February 2025",
       time: "10:00 am",
       location: "5th Floor",
